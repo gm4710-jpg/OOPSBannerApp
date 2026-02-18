@@ -1,22 +1,16 @@
 /**
- * OOPSBannerApp UC2 Banner Display Application
- * Renders "OOPS" using a 7-line ASCII grid.
+ * OOPSBannerApp UC3
+ * Refactored to use String.join() for better memory efficiency.
  */
 public class OOPSBannerApp {
     public static void main(String[] args) {
-        // Line 1
-        System.out.println(" **** " + " " + " **** " + " " + "******* " + " " + " ***** ");
-        // Line 2
-        System.out.println("** **" + " " + "** **" + " " + "** **" + " " + "** **");
-        // Line 3
-        System.out.println("** **" + " " + "** **" + " " + "** **" + " " + "** ");
-        // Line 4
-        System.out.println("** **" + " " + "** **" + " " + "******* " + " " + " ***** ");
-        // Line 5
-        System.out.println("** **" + " " + "** **" + " " + "** " + " " + "     **");
-        // Line 6
-        System.out.println("** **" + " " + "** **" + " " + "** " + " " + "** **");
-        // Line 7
-        System.out.println(" **** " + " " + " **** " + " " + "** " + " " + " ***** ");
+        // Constructing each line using String.join("", ...) instead of +
+        System.out.println(String.join("", " **** ", " ", " **** ", " ", "******* ", " ", " ***** "));
+        System.out.println(String.join("", "** **", " ", "** **", " ", "** **", " ", "** **"));
+        System.out.println(String.join("", "** **", " ", "** **", " ", "** **", " ", "** "));
+        System.out.println(String.join("", "** **", " ", "** **", " ", "******* ", " ", " ***** "));
+        System.out.println(String.join("", "** **", " ", "** **", " ", "** ", " ", "     **"));
+        System.out.println(String.join("", "** **", " ", "** **", " ", "** ", " ", "** **"));
+        System.out.println(String.join("", " **** ", " ", " **** ", " ", "** ", " ", " ***** "));
     }
 }
