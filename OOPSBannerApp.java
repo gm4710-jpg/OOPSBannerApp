@@ -1,16 +1,14 @@
 /**
- * OOPSBannerApp UC3
- * Refactored to use String.join() for better memory efficiency.
+ * OOPSBannerApp UC1 – OOPS Banner Display Application
+ *
+ * This class demonstrates a simple Java application that displays the Object 
+ * Oriented Programming System OOPS acronym to the console.
+ *
+ * @author Developer
+ * @version 1.0
  */
 public class OOPSBannerApp {
     public static void main(String[] args) {
-        // Constructing each line using String.join("", ...) instead of +
-        System.out.println(String.join("", " **** ", " ", " **** ", " ", "******* ", " ", " ***** "));
-        System.out.println(String.join("", "** **", " ", "** **", " ", "** **", " ", "** **"));
-        System.out.println(String.join("", "** **", " ", "** **", " ", "** **", " ", "** "));
-        System.out.println(String.join("", "** **", " ", "** **", " ", "******* ", " ", " ***** "));
-        System.out.println(String.join("", "** **", " ", "** **", " ", "** ", " ", "     **"));
-        System.out.println(String.join("", "** **", " ", "** **", " ", "** ", " ", "** **"));
-        System.out.println(String.join("", " **** ", " ", " **** ", " ", "** ", " ", " ***** "));
+        System.out.println("OOPS");
     }
 }
