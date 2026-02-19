@@ -2,54 +2,20 @@ public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        // UC4: Render OOPS Banner using String Array and Loop
+        // UC5: Render OOPS Banner using Inline Array Initialization
 
-        // 7-line banner stored in String array
-        String[] banner = new String[7];
+        // Declare and initialize array in a single statement
+        String[] banner = {
+                String.join("   ", " ***** ", " ***** ", " ******", " ***** "),
+                String.join("   ", "*     *", "*     *", "*     *", "*     *"),
+                String.join("   ", "*     *", "*     *", "*     *", "*      "),
+                String.join("   ", "*     *", "*     *", "****** ", " ***** "),
+                String.join("   ", "*     *", "*     *", "*      ", "      *"),
+                String.join("   ", "*     *", "*     *", "*      ", "*     *"),
+                String.join("   ", " ***** ", " ***** ", "*      ", " ***** ")
+        };
 
-        banner[0] = String.join("   ",
-                " ***** ",
-                " ***** ",
-                " ******",
-                " ***** ");
-
-        banner[1] = String.join("   ",
-                "*     *",
-                "*     *",
-                "*     *",
-                "*     *");
-
-        banner[2] = String.join("   ",
-                "*     *",
-                "*     *",
-                "*     *",
-                "*      ");
-
-        banner[3] = String.join("   ",
-                "*     *",
-                "*     *",
-                "****** ",
-                " ***** ");
-
-        banner[4] = String.join("   ",
-                "*     *",
-                "*     *",
-                "*      ",
-                "      *");
-
-        banner[5] = String.join("   ",
-                "*     *",
-                "*     *",
-                "*      ",
-                "*     *");
-
-        banner[6] = String.join("   ",
-                " ***** ",
-                " ***** ",
-                "*      ",
-                " ***** ");
-
-        // Enhanced for loop to print banner
+        // Enhanced for loop (same as UC4)
         for (String line : banner) {
             System.out.println(line);
         }
