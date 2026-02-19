@@ -1,14 +1,57 @@
 public class OOPSBannerApp {
+
     public static void main(String[] args) {
 
-        // Each line is 7 rows high and letters are formed using * and spaces
-        System.out.println("  *****     *****     ******     *****  ");
-        System.out.println(" *     *   *     *    *     *   *     * ");
-        System.out.println("*       * *       *   *     *   *       ");
-        System.out.println("*       * *       *   ******     *****  ");
-        System.out.println("*       * *       *   *               * ");
-        System.out.println(" *     *   *     *    *        *     *  ");
-        System.out.println("  *****     *****     *         *****   ");
+        // UC4: Render OOPS Banner using String Array and Loop
 
+        // 7-line banner stored in String array
+        String[] banner = new String[7];
+
+        banner[0] = String.join("   ",
+                " ***** ",
+                " ***** ",
+                " ******",
+                " ***** ");
+
+        banner[1] = String.join("   ",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *");
+
+        banner[2] = String.join("   ",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*      ");
+
+        banner[3] = String.join("   ",
+                "*     *",
+                "*     *",
+                "****** ",
+                " ***** ");
+
+        banner[4] = String.join("   ",
+                "*     *",
+                "*     *",
+                "*      ",
+                "      *");
+
+        banner[5] = String.join("   ",
+                "*     *",
+                "*     *",
+                "*      ",
+                "*     *");
+
+        banner[6] = String.join("   ",
+                " ***** ",
+                " ***** ",
+                "*      ",
+                " ***** ");
+
+        // Enhanced for loop to print banner
+        for (String line : banner) {
+            System.out.println(line);
+        }
     }
 }
