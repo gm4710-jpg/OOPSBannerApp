@@ -4,6 +4,7 @@ public class OOPSBannerApp {
 
         // UC6: Refactor Banner Logic into Static Helper Methods
 
+        // Array initialized using method calls (NOT UC5 inline strings)
         String[] banner = {
                 buildLine(0),
                 buildLine(1),
@@ -14,23 +15,23 @@ public class OOPSBannerApp {
                 buildLine(6)
         };
 
-        // Loop-based rendering (as per UC6)
+        // Loop to print banner
         for (String line : banner) {
             System.out.println(line);
         }
     }
 
-    // Builds each row of OOPS (O, O, P, S)
+    // Builds each row of "OOPS"
     public static String buildLine(int row) {
-        return String.join("   ",   // spacing between letters
+        return String.join("   ",
                 getOPattern(row),   // First O
-                getOPattern(row),   // Second O (for OOPS)
+                getOPattern(row),   // Second O
                 getPPattern(row),
                 getSPattern(row)
         );
     }
 
-    // Pattern for letter O (7 lines, fixed width)
+    // Pattern for O
     public static String getOPattern(int row) {
         String[] O = {
                 " *****  ",
@@ -44,7 +45,7 @@ public class OOPSBannerApp {
         return O[row];
     }
 
-    // Pattern for letter P
+    // Pattern for P
     public static String getPPattern(int row) {
         String[] P = {
                 "******  ",
@@ -58,7 +59,7 @@ public class OOPSBannerApp {
         return P[row];
     }
 
-    // Pattern for letter S
+    // Pattern for S
     public static String getSPattern(int row) {
         String[] S = {
                 " *****  ",
