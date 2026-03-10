@@ -1,45 +1,17 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+
 public class BannerApp {
-    static class CharacterPatternMap {
-        private char character;
-        private String[] pattern;
-        public CharacterPatternMap(char character, String[] pattern) {
-            this.character = character;
-            this.pattern = pattern;
-        }
-        // Getter for character
-        public char getCharacter() {
-            return character;
-        }
-        // Getter for pattern
-        public String[] getPattern() {
-            return pattern;
-        }
-    }
-    public static void printBanner(String text,
-                                   Map<Character, CharacterPatternMap> map) {
-        StringBuilder[] bannerLines = new StringBuilder[7];
-        for (int i = 0; i < 7; i++) {
-            bannerLines[i] = new StringBuilder();
-        }
-        // Build banner
-        for (char ch : text.toCharArray()) {
-            CharacterPatternMap cp = map.get(ch);
-            if (cp != null) {
-                String[] pattern = cp.getPattern();
-                for (int i = 0; i < 7; i++) {
-                    bannerLines[i].append(pattern[i]).append("  ");
-                }
-            }
-        }
-        // Print banner
-        for (StringBuilder line : bannerLines) {
-            System.out.println(line);
-        }
-    }
-    public static void main(String[] args) {
+
+    /**
+     * Utility method to create character patterns
+     */
+    public static Map<Character, String[]> createCharacterPatterns() {
+
+        Map<Character, String[]> patterns = new HashMap<>();
+
         // Pattern for O
-        String[] O = {
+        patterns.put('O', new String[]{
                 " ***** ",
                 "*     *",
                 "*     *",
@@ -47,10 +19,10 @@ public class BannerApp {
                 "*     *",
                 "*     *",
                 " ***** "
-        };
+        });
 
         // Pattern for P
-        String[] P = {
+        patterns.put('P', new String[]{
                 "****** ",
                 "*     *",
                 "*     *",
@@ -58,10 +30,10 @@ public class BannerApp {
                 "*      ",
                 "*      ",
                 "*      "
-        };
+        });
 
         // Pattern for S
-        String[] S = {
+        patterns.put('S', new String[]{
                 " ***** ",
                 "*      ",
                 "*      ",
@@ -69,25 +41,51 @@ public class BannerApp {
                 "      *",
                 "      *",
                 " ***** "
-        };
+        });
 
-       
-        CharacterPatternMap oPattern =
-                new CharacterPatternMap('O', O);
+        return patterns;
+    }
 
-        CharacterPatternMap pPattern =
-                new CharacterPatternMap('P', P);
+    /**
+     * Utility method to print banner text
+     */
+    public static void printBanner(String message,
+                                   Map<Character, String[]> patterns) {
 
-        CharacterPatternMap sPattern =
-                new CharacterPatternMap('S', S);
+        StringBuilder[] bannerLines = new StringBuilder[7];
 
-        // Store in Map
-        Map<Character, CharacterPatternMap> patternMap = new HashMap<>();
-        patternMap.put('O', oPattern);
-        patternMap.put('P', pPattern);
-        patternMap.put('S', sPattern);
+        // initialize lines
+        for (int i = 0; i < 7; i++) {
+            bannerLines[i] = new StringBuilder();
+        }
 
-        // Display Banner
-        printBanner("OOPS", patternMap);
+        // build banner using nested loops
+        for (char ch : message.toCharArray()) {
+
+            String[] pattern = patterns.get(ch);
+
+            if (pattern != null) {
+                for (int i = 0; i < 7; i++) {
+                    bannerLines[i].append(pattern[i]).append("  ");
+                }
+            }
+        }
+
+        // print banner
+        for (StringBuilder line : bannerLines) {
+            System.out.println(line.toString());
+        }
+    }
+
+    /**
+     * Main Method
+     */
+    public static void main(String[] args) {
+
+        // Create patterns using HashMap
+        Map<Character, String[]> patterns = createCharacterPatterns();
+
+        // Display banner
+        printBanner("OOPS", patterns);
     }
 }
