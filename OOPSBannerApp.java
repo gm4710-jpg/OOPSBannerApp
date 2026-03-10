@@ -4,7 +4,6 @@ public class OOPSBannerApp {
 
         // UC6: Refactor Banner Logic into Static Helper Methods
 
-        // Array initialized using method calls (NOT UC5 inline strings)
         String[] banner = {
                 buildLine(0),
                 buildLine(1),
